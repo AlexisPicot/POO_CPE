@@ -4,9 +4,9 @@
 </script>
 
 {#if external}
-	<section data-markdown={name} />
+	<section data-auto-animate data-markdown={name} />
 {:else}
-	<section data-markdown>
+	<section data-markdown data-auto-animate>
 		<div data-template>
 			<slot />
 		</div>

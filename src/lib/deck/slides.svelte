@@ -17,12 +17,21 @@
 			plugins: [Markdown, Highlight, Notes],
 			autoAnimateEasing: 'ease',
 			autoAnimateDuration: 1,
-			hash: true
+			autoAnimateUnmatched: true,
+			controlsTutorial:true,
+			slideNumber: "c/t",
+			hash: true, 
+			showNotes: true,
+			mouseWheel: true,
+			transition:'fade',
+			highlight:{
+				highlightOnLoad: true,
+			}
 			// controls: false,
 			// progress: false
 		})
 
-		deck.initialize()
+		deck.initialize({})
 	})
 </script>
 

@@ -2,8 +2,21 @@
 	import Slide from './slide.svelte'
 	import Code from './code.svelte'
 	import Markdown from './markdown.svelte'
+	import Introduction from './TP1/introduction.svelte'
 </script>
 
+<Slide />
+<Slide animate={true}>
+	<h1 class="capitalize">Programmation Orientée objet</h1>
+	<h2 class="capitalize">Java</h2>
+</Slide>
+
+<Slide>
+	<Slide>
+		<h1 class="capitalize">Introduction</h1>
+	</Slide>
+	<Introduction />
+</Slide>
 <Slide>
 	<p class="capitalize">Svelte deck 🔥</p>
 </Slide>

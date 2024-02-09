@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let id: string | null = null
-	export let animate = false
+	export let animate = true
 	export let restart = false
 </script>
 
