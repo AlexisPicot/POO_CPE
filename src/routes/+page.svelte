@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Presentation</title>
+	<title>Programmation Orientée Objet - PICOT Alexis</title>
 </svelte:head>
 
 <Slides />

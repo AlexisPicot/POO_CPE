@@ -1,20 +1,8 @@
 <script>
-	import Code from '../code.svelte'
-	import Markdown from '../markdown.svelte'
-	import Slide from '../slide.svelte'
+	import Code from '$lib/deck/code.svelte'
+	import Slide from '$lib/deck/slide.svelte'
 </script>
 
-<Slide>
-	<h1 class="capitalize">Introduction</h1>
-</Slide>
-
-<Slide>
-	<h1 class="capitalize">Introduction</h1>
-	<ul>
-		<li>Présentation du langage Java</li>
-		<li>Présentation de l'intêret de la POO</li>
-	</ul>
-</Slide>
 <Slide>
 	<h3>Le langage Java</h3>
 	<div class="flex flex-col justify-center">
@@ -23,7 +11,7 @@
 			src="https://upload.wikimedia.org/wikipedia/fr/2/2e/Java_Logo.svg"
 			alt="Java Logo"
 		/>
-        <p class="italic text-xl" >
+		<p class="italic text-xl">
 			Java est un langage de programmation polyvalent, orienté objet et largement utilisé dans le
 			développement logiciel. Il a été conçu pour être portable, ce qui signifie qu'il peut
 			fonctionner sur différentes plateformes sans nécessiter de modifications importantes.
@@ -38,7 +26,7 @@
 			src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*eU8zBZlcKcu0tetI7kTIbQ.png"
 			alt="Java Development Kit"
 		/>
-        <p class="italic text-xl" >
+		<p class="italic text-xl">
 			Le JDK (Java Development Kit) est un ensemble complet pour le développement d'applications
 			Java, comprenant la JVM (Java Virtual Machine) nécessaire pour exécuter du code Java. La JVM
 			est créée par la JRE (Java Runtime Environment), qui déploie les codes adaptés à chaque
@@ -50,26 +38,27 @@
 <Slide>
 	<h3>Syntaxe</h3>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="1-5">
-{`
+		<Code id="code" lines="1-5">
+			{`
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
     }
-}`}</Code >
-		<p class="italic text-xl" >
+}`}</Code
+		>
+		<p class="italic text-xl">
 			La syntaxe de Java est similaire à celle de C++, mais elle a moins de fonctionnalités basées
 			sur les pointeurs. Java est un langage de programmation orienté objet, ce qui signifie que les
 			programmes Java sont constitués de classes et d'objets.
-        </p>
+		</p>
 	</div>
 </Slide>
 <Slide>
 	<h3>Syntaxe</h3>
-    <h4>Les variables</h4>
+	<h4>Les variables</h4>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="3-7">
-{`
+		<Code id="code" lines="3-7">
+			{`
 public class Main {
     public static void main(String[] args) {
         String name = "John";
@@ -79,17 +68,17 @@ public class Main {
         char grade = 'A';
         System.out.println("Hello World");
     }
-}`}</Code>
-		
+}`}</Code
+		>
 	</div>
 </Slide>
 <Slide>
 	<h3>Syntaxe</h3>
-    <h4>Les structures de contrôle</h4>
-    <h5>Condition</h5>
+	<h4>Les structures de contrôle</h4>
+	<h5>Condition</h5>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="3-7">
-{`
+		<Code id="code" lines="3-7">
+			{`
 public class Main {
     public static void main(String[] args) {
         if (condition) {
@@ -99,17 +88,17 @@ public class Main {
         }
         System.out.println("Hello World");
     }
-}`}</Code>
-		
+}`}</Code
+		>
 	</div>
 </Slide>
 <Slide>
 	<h3>Syntaxe</h3>
-    <h4>Les structures de contrôle</h4>
-    <h5>Boucle</h5>
+	<h4>Les structures de contrôle</h4>
+	<h5>Boucle</h5>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="3-5">
-{`
+		<Code id="code" lines="3-5">
+			{`
 public class Main {
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
@@ -117,17 +106,17 @@ public class Main {
         }
         System.out.println("Hello World");
     }
-}`}</Code>
-		
+}`}</Code
+		>
 	</div>
 </Slide>
 <Slide>
 	<h3>Syntaxe</h3>
-    <h4>Les structures de contrôle</h4>
-    <h5>Boucle</h5>
+	<h4>Les structures de contrôle</h4>
+	<h5>Boucle</h5>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="3-7">
-{`
+		<Code id="code" lines="3-7">
+			{`
 public class Main {
     public static void main(String[] args) {
         int i = 0;
@@ -137,17 +126,17 @@ public class Main {
         }
         System.out.println("Hello World");
     }
-}`}</Code>
-		
+}`}</Code
+		>
 	</div>
 </Slide>
 <Slide>
 	<h3>Syntaxe</h3>
-    <h4>Les structures de contrôle</h4>
-    <h5>Boucle</h5>
+	<h4>Les structures de contrôle</h4>
+	<h5>Boucle</h5>
 	<div class="flex flex-col justify-center">
-<Code id="code" lines="3-7">
-{`
+		<Code id="code" lines="3-7">
+			{`
 public class Main {
     public static void main(String[] args) {
         int i = 0;
@@ -157,17 +146,17 @@ public class Main {
         } while (i < 5);
         System.out.println("Hello World");
     }
-}`}</Code>
-		
+}`}</Code
+		>
 	</div>
 </Slide>
 <Slide>
-    <h3>Syntaxe</h3>
-    <h4>Les structures de contrôle</h4>
-    <h5>Les switch</h5>
-    <div class="flex flex-col justify-center">
-        <Code id="code" lines="3-13">
-        {`
+	<h3>Syntaxe</h3>
+	<h4>Les structures de contrôle</h4>
+	<h5>Les switch</h5>
+	<div class=" flex flex-col justify-center">
+		<Code id="code" lines="3-13">
+			{`
         public class Main {
             public static void main(String[] args) {
                 int age = 30;
@@ -183,7 +172,28 @@ public class Main {
                 }
                 System.out.println("Hello World");
             }
-        }`}</Code>
-                
-            </div>
-        </Slide>
+        }`}</Code
+		>
+	</div>
+</Slide>
+
+<Slide>
+	<h3>Syntaxe</h3>
+	<h4>Les exceptions</h4>
+	<div class=" flex flex-col justify-center">
+		<Code id="code" lines="3-8">
+			{`
+			public class Main {
+				public static void main(String[] args) {
+					try {
+						int[] myNumbers = {1, 2, 3};
+						System.out.println(myNumbers[10]);
+					} catch (Exception e) {
+						System.out.println("Something went wrong.");
+					}
+				}
+			}
+			`}</Code
+		>
+	</div>
+</Slide>

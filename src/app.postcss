@@ -9,18 +9,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.reveal h3 {
+	font-size: 1em;
+}
+.reveal h4 {
+	font-size: 0.8em;
+}
+.reveal h5 {
+	font-size: 0.6em;
+}
 
-h3 {
-	font-size: .7em;
-}
-h4 {
-	font-size: .6em;
-}
-h5 {
-	font-size: .5em;
-}
-.gpt::before{
-	content: url("/chat-gpt.png");;
+.gpt::before {
+	content: url('/chat-gpt.png');
 }
 :root {
 	--r-main-font: 'Manrope';
@@ -42,8 +42,26 @@ h5 {
 .reveal pre,
 .reveal code {
 	overflow: hidden !important;
+	overflow-y: auto !important;
 }
-
 .reveal pre {
 	box-shadow: none;
+}
+
+@media print {
+	body,
+	.reveal * {
+		background-color: white !important;
+		color: black !important;
+	}
+	.reveal code {
+		overflow: visible !important;
+	}
+	.reveal code * {
+		font-size: xx-small !important;
+		line-height: 1em !important;
+	}
+	.no-print {
+		display: none !important;
+	}
 }

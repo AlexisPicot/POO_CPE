@@ -2,9 +2,10 @@
 	export let id: string | null = null
 	export let lines: string | boolean | null = null
 	export let noescape = false
+	export let className: string | null = null
 </script>
 
-<pre data-id={id || null}>
+<pre class={className || null} data-id={id || null}>
   <code data-trim data-line-numbers={lines || null} data-noescape={noescape || null}>
     <slot />
   </code>
