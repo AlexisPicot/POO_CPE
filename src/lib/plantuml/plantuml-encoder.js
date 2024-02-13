@@ -13,6 +13,7 @@ var encode64 = require('./encode64')
 
 // @ts-ignore
 module.exports.encode = function (text) {
+	
 	var data = utf8bytes(text)
 	var deflated = pakoDeflate.deflate(data, { level: 9, to: 'string', raw: true })
 	return encode64.encode(deflated)

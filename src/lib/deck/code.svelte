@@ -6,7 +6,7 @@
 </script>
 
 <pre class={className || null} data-id={id || null}>
-  <code data-trim data-line-numbers={lines || null} data-noescape={noescape || null}>
+  <code data-trim data-line-numbers={lines || true} data-noescape={noescape || null}>
     <slot />
   </code>
 </pre>

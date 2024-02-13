@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 
+	import plantumlEncoder from 'plantuml-encoder'
 	import Reveal from 'reveal.js'
-	import Highlight from 'reveal.js/plugin/highlight/highlight'
-	import Markdown from 'reveal.js/plugin/markdown/markdown'
-	import Notes from 'reveal.js/plugin/notes/notes'
 	import 'reveal.js/dist/reveal.css'
 	import 'reveal.js/dist/theme/black.css'
+	import Highlight from 'reveal.js/plugin/highlight/highlight'
 	import 'reveal.js/plugin/highlight/monokai.css'
+	import Markdown from 'reveal.js/plugin/markdown/markdown'
+	import Notes from 'reveal.js/plugin/notes/notes'
 	import Presentation from './presentation.svelte'
-	import plantumlEncoder from 'plantuml-encoder'
 
 	onMount(() => {
 		const deck = new Reveal({
@@ -28,9 +28,11 @@
 				highlightOnLoad: true
 			},
 			minScale: 0.1,
-			maxScale: 50.0,
+			maxScale: 1.0,
 			width: 1280,
-			height: 720
+			height: 720,
+			//view: 'scale',
+			//scrollProgress: true
 			// controls: false,
 			// progress: false
 		})
@@ -47,6 +49,7 @@
 					elements.forEach((element) => {
 						const plantuml = element.textContent
 						const img = document.createElement('img')
+						console.log(plantuml);
 						img.src = ('//www.plantuml.com/plantuml/svg/' +
 							plantumlEncoder.encode(plantuml!)) as string
 						var oldElem = (element.parentElement as HTMLElement).closest('div.uml') as HTMLElement

@@ -6,17 +6,17 @@ settings:
 
 dependencies:
   '@fontsource/jetbrains-mono':
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.0.18
+    version: 5.0.18
   '@fontsource/manrope':
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.0.18
+    version: 5.0.18
   '@types/plantuml-encoder':
     specifier: ^1.4.2
     version: 1.4.2
   '@types/reveal.js':
-    specifier: ^4.4.2
-    version: 4.4.2
+    specifier: ^4.4.8
+    version: 4.4.8
   pako:
     specifier: ^2.1.0
     version: 2.1.0
@@ -24,8 +24,8 @@ dependencies:
     specifier: ^1.4.0
     version: 1.4.0
   reveal.js:
-    specifier: ^4.5.0
-    version: 4.5.0
+    specifier: ^5.0.4
+    version: 5.0.4
   utf8-bytes:
     specifier: ^0.0.1
     version: 0.0.1
@@ -365,12 +365,12 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/jetbrains-mono@5.0.2:
-    resolution: {integrity: sha512-2otc4BSOJ94gFkG4o7fjmARaIcI76wmMIyyY7SbPnM2EqA8lr5I/cu9KofoAUSc5haBJExK6DlWGVMfRGKnDIA==}
+  /@fontsource/jetbrains-mono@5.0.18:
+    resolution: {integrity: sha512-0+YDAaAnCdXjirHFO3NfHLUW8xtKCT5rlm23Q0qG3TpZp3QBrZh5r9ikUxh3ufHc2+fVnk4Y6GWNEnVIfB7u/g==}
     dev: false
 
-  /@fontsource/manrope@5.0.2:
-    resolution: {integrity: sha512-UnnL1Ji+6cBO2djxAv3NCfXGjJwWt6Owny5D0hnYXdGTU+gRIqybnOegQtiqmxcgQhmnR8DTm6x9mbQlHwyheg==}
+  /@fontsource/manrope@5.0.18:
+    resolution: {integrity: sha512-rcH+NXafXbKaLU+xS5VRAOBvI1FOf2VvLUYv3TQXpF9HETtpWwLb9+/4N/kFOA/0YneqkQal+YTqTYEmqGip1g==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -683,8 +683,8 @@ packages:
     resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
     dev: true
 
-  /@types/reveal.js@4.4.2:
-    resolution: {integrity: sha512-z+lVPEWGPFrPv3S9Mx2qLKXA4zT+Mo3GxvW68OR7lbUcCmqjn4vjaQJ2qCW+xNkBUgfR8d3fzLWHmu1PIfRiIA==}
+  /@types/reveal.js@4.4.8:
+    resolution: {integrity: sha512-ADWVEgRLNVRE+J5yGjFDogsAaeVz+FKRVgvpLk1tgNewocXQd6wuKSknfamCVgZyUY9/IgOlkNKh9a2iIaconA==}
     dev: false
 
   /@types/semver@7.5.6:
@@ -2092,9 +2092,9 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /reveal.js@4.5.0:
-    resolution: {integrity: sha512-Lx1hUWhJR7Y7ScQNyGt7TFzxeviDAswK2B0cn9RwbPZogTMRgS8+FTr+/12KNHOegjvWKH0H0EGwBARNDPTgWQ==}
-    engines: {node: '>=10.0.0'}
+  /reveal.js@5.0.4:
+    resolution: {integrity: sha512-480pVhre9SXWuE4QbDwG0nPrip3TkifflqaKQWF8Ynf4iYIUBfgu5leeMso0srubQsZQ+G2OzktAfAkrvBY0Ww==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /rimraf@2.7.1:

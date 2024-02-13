@@ -47,7 +47,9 @@
 .reveal pre {
 	box-shadow: none;
 }
-
+code{
+	@apply text-purple-400;
+}
 @media print {
 	body,
 	.reveal * {
@@ -57,10 +59,7 @@
 	.reveal code {
 		overflow: visible !important;
 	}
-	.reveal code * {
-		font-size: xx-small !important;
-		line-height: 1em !important;
-	}
+
 	.no-print {
 		display: none !important;
 	}

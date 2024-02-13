@@ -16,6 +16,9 @@
 		"@sveltejs/adapter-auto": "^3.1.1",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"@sveltejs/kit": "2.5.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
+		"@tsconfig/svelte": "^5.0.2",
+		"@types/reveal.js": "^4.4.8",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"autoprefixer": "^10.4.17",
@@ -33,18 +36,16 @@
 		"tailwindcss": "^3.4.1",
 		"tslib": "^2.6.2",
 		"typescript": "^5.3.3",
-		"vite": "^5.1.1",
-		"@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@tsconfig/svelte": "^5.0.2"
+		"vite": "^5.1.1"
 	},
 	"dependencies": {
-		"@fontsource/jetbrains-mono": "^5.0.2",
-		"@fontsource/manrope": "^5.0.2",
+		"@fontsource/jetbrains-mono": "^5.0.18",
+		"@fontsource/manrope": "^5.0.18",
+		"@types/reveal.js": "^4.4.8",
 		"@types/plantuml-encoder": "^1.4.2",
-		"@types/reveal.js": "^4.4.2",
 		"pako": "^2.1.0",
 		"plantuml-encoder": "^1.4.0",
-		"reveal.js": "^4.5.0",
+		"reveal.js": "^5.0.4",
 		"utf8-bytes": "^0.0.1"
 	}
 }
