@@ -5,7 +5,7 @@
 	export let className: string | null = null
 </script>
 
-<pre class={className || null} data-id={id || null}>
+<pre class={(className || null) } data-id={id || null}>
   <code data-trim data-line-numbers={lines || true} data-noescape={noescape || null}>
     <slot />
   </code>

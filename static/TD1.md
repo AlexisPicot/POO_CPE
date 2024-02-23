@@ -58,6 +58,54 @@ public class F {
 ```
 > Réponse :
 
+2. Ce code compile t-il et, si non, quelle(s) erreur(s) le compilateur va t-il indiquer ?
+```java
+class Toto {
+
+  int toto = 0;
+
+  Toto() {
+    toto = toto + 1;
+  }
+
+  public static void main(String[] tutu) {
+    Toto t1 = new Toto();
+    Toto t2 = new Toto();
+    System.out.println("Toto : " + toto);
+  }
+}
+
+```
+> Réponse :
+
+3. Le code suivant compile t-il? Si non, indiquez les erreurs affichées par le compilateur et
+proposez des corrections. À quel affichage conduit l'exécution du programme (éventuellement
+corrigé)?
+
+```java
+class Test {
+
+  int i;
+
+  Test(int i) {
+    this.i = 12;
+    i = 15;
+  }
+
+  void i() {
+    Test i = new Test(3);
+    System.out.println(i.i);
+    i.i();
+  }
+
+  public static void main(String[] toto) {
+    Test i = new Test(34);
+    i.i();
+  }
+}
+
+```
+
 ## Relations entre classes
 
 1. Définir les relations entre les classes suivantes :
@@ -111,38 +159,54 @@ public class D {
 
 ```java
 public class Parent {
- int x;
- Parent(int k) {x=k;}
- int ajoute(int a) { return x+a; }
- public void moi() { System.out.println(" x = "+ x); }
+    int x;
+    Parent(int k) {
+        x = k;
+    }
+    int ajoute(int a) {
+        return x + a;
+    }
+    public void moi() {
+        System.out.println(" x = " + x);
+    }
 }
 public class Enfant1 extends Parent {
- int y;
- Enfant1 (int k, int l) { super(k); y=l; }
- int ajoute(int a) { return x+2*a;}
+    int y;
+    Enfant1(int k, int l) {
+        super(k);
+        y = l;
+    }
+    int ajoute(int a) {
+        return x + 2 * a;
+    }
 }
 public class Enfant2 extends Enfant1 {
- int z ;
- Enfant2 (int k, int l, int m) { super(k, l); z= m; }
- int ajoute(int a) { return x+3*a;}
- public void moi() {
- super.moi();
- System.out.println(" z = "+ z);
- }
+    int z;
+    Enfant2(int k, int l, int m) {
+        super(k, l);
+        z = m;
+    }
+    int ajoute(int a) {
+        return x + 3 * a;
+    }
+    public void moi() {
+        super.moi();
+        System.out.println(" z = " + z);
+    }
 }
-public class Essai{
- public static void main (String args[]) {
- int a =2;
- Parent p = new Parent(3);
- p.moi();
- System.out.println(" ajoute("+ a +") = "+ p.ajoute(a) );
- Enfant1 e1 = new Enfant1(3, 4);
- e1.moi();
- System.out.println(" ajoute("+ a +") = "+ e1.ajoute(a) );
- e1 = new Enfant2(3, 4, 5);
- e1.moi();
- System.out.println(" ajoute("+ a +") = "+ e1.ajoute(a) );
- }
+public class Essai {
+    public static void main(String args[]) {
+        int a = 2;
+        Parent p = new Parent(3);
+        p.moi();
+        System.out.println(" ajoute(" + a + ") = " + p.ajoute(a));
+        Enfant1 e1 = new Enfant1(3, 4);
+        e1.moi();
+        System.out.println(" ajoute(" + a + ") = " + e1.ajoute(a));
+        e1 = new Enfant2(3, 4, 5);
+        e1.moi();
+        System.out.println(" ajoute(" + a + ") = " + e1.ajoute(a));
+    }
 }
 ```
 

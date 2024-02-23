@@ -5,6 +5,7 @@
 	import Heritage from './heritage.svelte'
 	import IntroductionClasses from './introductionClasses.svelte'
 	import LangageJava from './langageJava.svelte'
+	import Polymorphisme from './polymorphisme.svelte'
 </script>
 
 <Slide>
@@ -32,23 +33,23 @@
 	<Heritage />
 </Slide>
 <Slide>
+	<Polymorphisme />
+</Slide>
+<Slide>
 	<h1>TD</h1>
 	<p>Question à compléter et à rendre sur <i>e-campus</i></p>
-	<a href="/TD1.docx">Version Word</a>
+	<a href="/TD1.docx">TD1 (Version Word)</a><br />
+	<a href="/TD1.html">TD1 (Version Web)</a>
 </Slide>
 <Slide>
 	<h1>TP</h1>
 	<p>Code source à déposer sur <i>e-campus</i></p>
-	<a href="/TP1.docx">Version Word</a>
-</Slide>
-<Slide>
-	<p>Explications tirées de :	</p>
-	<ul>
-		<li>
-			<a href="https://gayerie.dev/epsi-b3-java/langage_java/">gayerie.dev</a>
-		<li>
-			<!-- https://www-lisic.univ-littoral.fr/~fonlupt/Enseignement/2020/POO/index.html  -->
-			<a href="https://www-lisic.univ-littoral.fr/~fonlupt/Enseignement/2020/POO/index.html">POO - LISIC</a>
-		</li>
-	</ul>
+	<a href="/EnvSetup.docx">Configuration VSCode (Version Word) </a> <br />
+	
+	<a href="/EnvSetup.html">Configuration VSCode (Version Web) </a> <br /><br />
+
+	<a href="/TP1.docx">TP1 (Version Word) </a> <br />
+	<a href="/TP1.html">TP1 (Version Web)</a><br /><br />
+	<a href="/TP2.docx">TP2 (Version Word)</a><br />
+	<a href="/TP2.html">TP2 (Version Web)</a>
 </Slide>

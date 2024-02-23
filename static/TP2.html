@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head>
+      <title>TP 2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h3 id="étape-5–implémentation-de-classes-de-personnages-spécialisées"><strong>Étape 5 : Implémentation de classes de personnages spécialisées</strong> </h3>
+<p>Dans cette étape, vous allez implémenter des classes de personnages spécialisées. Vous utiliserez l’héritage pour créer ces classes et surchargerez la méthode <code>attaqueSpeciale()</code> pour chaque type de personnage.</p>
+<h4 id="instructions-">Instructions : </h4>
+<ol>
+<li>Utilisez le diagramme de classes suivant comme guide pour créer les classes de personnages spécialisées :</li>
+</ol>
+<p class="plantuml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="399px" preserveAspectRatio="none" style="width:633px;height:399px;background:#FFFFFF;" version="1.1" viewBox="0 0 633 399" width="633px" zoomAndPan="magnify"><defs></defs><g><!--class Personnage--><g id="elem_Personnage"><rect codeline="2" fill="#F1F1F1" height="241.7031" id="Personnage" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="317" x="157" y="7"></rect><ellipse cx="272.75" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"></ellipse><path d="M274.9375,24.7656 L270.7969,24.7656 L270.375,25.7969 L270.7969,25.7969 Q271.4063,25.7969 271.6719,26.0313 Q271.9375,26.2656 271.9375,26.6563 Q271.9375,27.0313 271.6719,27.2656 Q271.4063,27.5 270.7969,27.5 L268.5,27.5 Q267.8906,27.5 267.6406,27.2656 Q267.375,27.0313 267.375,26.6406 Q267.375,26.2656 267.6563,26.0313 Q267.9219,25.7813 268.5469,25.7969 L271.2188,19.1406 L270.1094,19.1406 Q269.5,19.1406 269.2344,18.9063 Q268.9688,18.6719 268.9688,18.2813 Q268.9688,17.9063 269.2344,17.6719 Q269.5,17.4375 270.1094,17.4375 L273.7813,17.4375 L277.1719,25.7969 Q277.7656,25.7969 277.9531,25.9375 Q278.3438,26.2031 278.3438,26.6563 Q278.3438,27.0313 278.0781,27.2656 Q277.8281,27.5 277.2188,27.5 L274.9219,27.5 Q274.3125,27.5 274.0469,27.2656 Q273.7813,27.0313 273.7813,26.6406 Q273.7813,26.2656 274.0469,26.0313 Q274.3125,25.7969 274.9219,25.7969 L275.3438,25.7969 L274.9375,24.7656 Z M274.2188,23.0625 L272.8594,19.6875 L271.4844,23.0625 L274.2188,23.0625 Z " fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="77" x="293.25" y="28.7285">Personnage</text><line style="stroke:#181818;stroke-width:0.5;" x1="158" x2="473" y1="39" y2="39"></line><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="165" y="50.3047"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="177" y="57.5332">nom: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="165" y="67.9141"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="177" y="75.1426">pointsDeVie: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="165" y="85.5234"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="177" y="92.752">competences: EnumMap</text><line style="stroke:#181818;stroke-width:0.5;" x1="158" x2="473" y1="99.8281" y2="99.8281"></line><ellipse cx="168" cy="114.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="177" y="118.3613">Personnage(nom: String)</text><ellipse cx="168" cy="131.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="177" y="135.9707">abstract attaqueSpeciale(): void</text><ellipse cx="168" cy="149.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="177" y="153.5801">String getNom()</text><ellipse cx="168" cy="166.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="177" y="171.1895">int getPointsDeVie()</text><ellipse cx="168" cy="184.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="291" x="177" y="188.7988">void augmenterCompetence(Competence, int)</text><ellipse cx="168" cy="202.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252" x="177" y="206.4082">int getNiveauCompetence(Competence)</text><ellipse cx="168" cy="219.7891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="177" y="224.0176">void afficherCompetences()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="165" y="234.3984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="177" y="241.627">void initialiserCompetences()</text></g><!--class Mercenaire--><g id="elem_Mercenaire"><rect codeline="16" fill="#F1F1F1" height="83.2188" id="Mercenaire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="179" x="7" y="309"></rect><ellipse cx="56.75" cy="325" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"></ellipse><path d="M59.5156,320.875 Q59.6719,320.6563 59.8594,320.5469 Q60.0469,320.4375 60.2656,320.4375 Q60.6406,320.4375 60.875,320.7031 Q61.1094,320.9531 61.1094,321.5625 L61.1094,323.0156 Q61.1094,323.625 60.875,323.8906 Q60.6406,324.1563 60.2656,324.1563 Q59.9219,324.1563 59.7188,323.9531 Q59.5156,323.7656 59.4063,323.25 Q59.3594,322.8906 59.1719,322.7031 Q58.8438,322.3281 58.2344,322.1094 Q57.625,321.8906 57,321.8906 Q56.2344,321.8906 55.5938,322.2188 Q54.9688,322.5469 54.4688,323.2969 Q53.9844,324.0469 53.9844,325.0781 L53.9844,326.1719 Q53.9844,327.4063 54.875,328.2344 Q55.7656,329.0469 57.3594,329.0469 Q58.2969,329.0469 58.9531,328.7969 Q59.3438,328.6406 59.7656,328.2031 Q60.0313,327.9375 60.1719,327.8594 Q60.3281,327.7813 60.5313,327.7813 Q60.8594,327.7813 61.1094,328.0469 Q61.375,328.2969 61.375,328.6406 Q61.375,328.9844 61.0313,329.3906 Q60.5313,329.9688 59.7344,330.2969 Q58.6563,330.75 57.3594,330.75 Q55.8438,330.75 54.6406,330.125 Q53.6563,329.625 52.9688,328.5625 Q52.2813,327.4844 52.2813,326.2031 L52.2813,325.0469 Q52.2813,323.7188 52.8906,322.5781 Q53.5156,321.4219 54.6094,320.8125 Q55.7031,320.1875 56.9375,320.1875 Q57.6719,320.1875 58.3125,320.3594 Q58.9688,320.5156 59.5156,320.875 Z " fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="77.25" y="330.7285">Mercenaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="185" y1="341" y2="341"></line><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="185" y1="349" y2="349"></line><ellipse cx="18" cy="363.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="27" y="367.5332">Mercenaire(nom: String)</text><ellipse cx="18" cy="380.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="27" y="385.1426">attaqueSpeciale(): void</text></g><!--class SuperMutant--><g id="elem_SuperMutant"><rect codeline="21" fill="#F1F1F1" height="83.2188" id="SuperMutant" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="189" x="221" y="309"></rect><ellipse cx="270.75" cy="325" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"></ellipse><path d="M273.5156,320.875 Q273.6719,320.6563 273.8594,320.5469 Q274.0469,320.4375 274.2656,320.4375 Q274.6406,320.4375 274.875,320.7031 Q275.1094,320.9531 275.1094,321.5625 L275.1094,323.0156 Q275.1094,323.625 274.875,323.8906 Q274.6406,324.1563 274.2656,324.1563 Q273.9219,324.1563 273.7188,323.9531 Q273.5156,323.7656 273.4063,323.25 Q273.3594,322.8906 273.1719,322.7031 Q272.8438,322.3281 272.2344,322.1094 Q271.625,321.8906 271,321.8906 Q270.2344,321.8906 269.5938,322.2188 Q268.9688,322.5469 268.4688,323.2969 Q267.9844,324.0469 267.9844,325.0781 L267.9844,326.1719 Q267.9844,327.4063 268.875,328.2344 Q269.7656,329.0469 271.3594,329.0469 Q272.2969,329.0469 272.9531,328.7969 Q273.3438,328.6406 273.7656,328.2031 Q274.0313,327.9375 274.1719,327.8594 Q274.3281,327.7813 274.5313,327.7813 Q274.8594,327.7813 275.1094,328.0469 Q275.375,328.2969 275.375,328.6406 Q275.375,328.9844 275.0313,329.3906 Q274.5313,329.9688 273.7344,330.2969 Q272.6563,330.75 271.3594,330.75 Q269.8438,330.75 268.6406,330.125 Q267.6563,329.625 266.9688,328.5625 Q266.2813,327.4844 266.2813,326.2031 L266.2813,325.0469 Q266.2813,323.7188 266.8906,322.5781 Q267.5156,321.4219 268.6094,320.8125 Q269.7031,320.1875 270.9375,320.1875 Q271.6719,320.1875 272.3125,320.3594 Q272.9688,320.5156 273.5156,320.875 Z " fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="291.25" y="330.7285">SuperMutant</text><line style="stroke:#181818;stroke-width:0.5;" x1="222" x2="409" y1="341" y2="341"></line><line style="stroke:#181818;stroke-width:0.5;" x1="222" x2="409" y1="349" y2="349"></line><ellipse cx="232" cy="363.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="241" y="367.5332">SuperMutant(nom: String)</text><ellipse cx="232" cy="380.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="241" y="385.1426">attaqueSpeciale(): void</text></g><!--class Scientifique--><g id="elem_Scientifique"><rect codeline="27" fill="#F1F1F1" height="83.2188" id="Scientifique" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="181" x="445" y="309"></rect><ellipse cx="494.75" cy="325" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"></ellipse><path d="M497.5156,320.875 Q497.6719,320.6563 497.8594,320.5469 Q498.0469,320.4375 498.2656,320.4375 Q498.6406,320.4375 498.875,320.7031 Q499.1094,320.9531 499.1094,321.5625 L499.1094,323.0156 Q499.1094,323.625 498.875,323.8906 Q498.6406,324.1563 498.2656,324.1563 Q497.9219,324.1563 497.7188,323.9531 Q497.5156,323.7656 497.4063,323.25 Q497.3594,322.8906 497.1719,322.7031 Q496.8438,322.3281 496.2344,322.1094 Q495.625,321.8906 495,321.8906 Q494.2344,321.8906 493.5938,322.2188 Q492.9688,322.5469 492.4688,323.2969 Q491.9844,324.0469 491.9844,325.0781 L491.9844,326.1719 Q491.9844,327.4063 492.875,328.2344 Q493.7656,329.0469 495.3594,329.0469 Q496.2969,329.0469 496.9531,328.7969 Q497.3438,328.6406 497.7656,328.2031 Q498.0313,327.9375 498.1719,327.8594 Q498.3281,327.7813 498.5313,327.7813 Q498.8594,327.7813 499.1094,328.0469 Q499.375,328.2969 499.375,328.6406 Q499.375,328.9844 499.0313,329.3906 Q498.5313,329.9688 497.7344,330.2969 Q496.6563,330.75 495.3594,330.75 Q493.8438,330.75 492.6406,330.125 Q491.6563,329.625 490.9688,328.5625 Q490.2813,327.4844 490.2813,326.2031 L490.2813,325.0469 Q490.2813,323.7188 490.8906,322.5781 Q491.5156,321.4219 492.6094,320.8125 Q493.7031,320.1875 494.9375,320.1875 Q495.6719,320.1875 496.3125,320.3594 Q496.9688,320.5156 497.5156,320.875 Z " fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="515.25" y="330.7285">Scientifique</text><line style="stroke:#181818;stroke-width:0.5;" x1="446" x2="625" y1="341" y2="341"></line><line style="stroke:#181818;stroke-width:0.5;" x1="446" x2="625" y1="349" y2="349"></line><ellipse cx="456" cy="363.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="465" y="367.5332">Scientifique(nom: String)</text><ellipse cx="456" cy="380.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"></ellipse><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="465" y="385.1426">attaqueSpeciale(): void</text></g><!--reverse link Personnage to Mercenaire--><g id="link_Personnage_Mercenaire"><path codeline="32" d="M181.76,263.66 C165.65,279.87 150.28,295.35 137.14,308.58 " fill="none" id="Personnage-backto-Mercenaire" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="none" points="177.01,258.51,196.07,249.25,186.94,268.37,177.01,258.51" style="stroke:#181818;stroke-width:1.0;"></polygon></g><!--reverse link Personnage to SuperMutant--><g id="link_Personnage_SuperMutant"><path codeline="33" d="M315.5,269.52 C315.5,283.59 315.5,296.96 315.5,308.58 " fill="none" id="Personnage-backto-SuperMutant" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="none" points="308.5,269.25,315.5,249.25,322.5,269.25,308.5,269.25" style="stroke:#181818;stroke-width:1.0;"></polygon></g><!--reverse link Personnage to Scientifique--><g id="link_Personnage_Scientifique"><path codeline="34" d="M449.85,263.66 C466.03,279.87 481.47,295.35 494.68,308.58 " fill="none" id="Personnage-backto-Scientifique" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="none" points="444.65,268.35,435.48,249.25,454.56,258.46,444.65,268.35" style="stroke:#181818;stroke-width:1.0;"></polygon></g><!--SRC=[bP8nRiCm34LtduAZWzGNCBgr7Hq4CD2TKMcNG2Gv4fMbwTqhrvQj9kaGJSB_vDCd8JnuSQW4r16zXpqvRut1dk2hWEbKOAokeHN7fYycPR1inB_IErCDyJhBokg1X8mYNyER2Rh1uTVQPkGomsrc5rCC5C5Je7OWnNYaSbF3sVB7N3OrGK-oixfCpV7zKTglcHPhx0KClIOZv5wMUELwVHhxhr0xFXE6k-L_oLt7wZC7-_dfQYfWmnBdO7zTyrqKqyORSeeCiaiRtsRItLNziw65s8Q1N1C4uom9cMaFCXDKSLmXTnpBLcecFeZDFjhpfQgocM-iBFkjboKeVW00]--></g></svg></p><ol>
+<li>Transformez votre classe <code>Personnage</code> en une classe abstraite avec les attributs et les méthodes communs à tous les personnages.</li>
+<li>Ajouter une méthode <code>public abstract void attaqueSpeciale();</code></li>
+<li>Créez des classes spécialisées <code>Mercenaire</code>, <code>SuperMutant</code> et <code>Scientifique</code> en héritant de la classe <code>Personnage</code>.</li>
+<li>Surchargez la méthode <code>attaqueSpeciale()</code> dans chaque classe spécialisée pour définir le comportement de l’attaque spéciale de chaque type de personnage.</li>
+<li>Testez vos classes en créant des instances de chaque type de personnage et en appelant la méthode <code>attaqueSpeciale()</code>.</li>
+<li>Dans le constructeur, appelez la méthode <code>super()</code> pour appeler le constructeur parent qui est censé initialiser les compétences à 0<br>
+Après l’initialisation, dans la classe enfant, ajouter par exemple <code>augmenterCompetence(Competence.AGILITE, 5);</code> ainsi chaque classe de personnage à un avantage par rapport aux autres.</li>
+</ol>
+<h3 id="conseils-">Conseils : </h3>
+<ul>
+<li>Pour créer une classe avec héritage, utilisez le mot-clé <code>extends</code> suivi du nom de la classe parente.</li>
+<li>Pour surcharger une méthode, déclarez une méthode avec la même signature dans la classe enfant, mais avec une implémentation différente.</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token comment">// Classe Mercenaire</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">Mercenaire</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Personnage</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Constructeur</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">Mercenaire</span><span class="token punctuation">(</span><span class="token class-name">String</span> nom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-super">super</span><span class="token punctuation">(</span>nom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">augmenterCompetence</span><span class="token punctuation">(</span><span class="token class-name">Competence</span><span class="token punctuation">.</span><span class="token constant">AGILITE</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Mettez la compétence de votre choix pour illuster</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Attaque spéciale du mercenaire</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">attaqueSpeciale</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getNom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" utilise son attaque spéciale : Tir de précision !"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="étape-6–utilisation-du-polymorphisme"><strong>Étape 6 : Utilisation du polymorphisme</strong> </h3>
+<p>Dans l’étape 6, nous allons montrer comment tirer profit du polymorphisme en utilisant les classes spécialisées <code>Mercenaire</code>, <code>SuperMutant</code>, et <code>Scientifique</code> dans notre programme principal. Voici un exemple de code :</p>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Création d'une liste de personnages</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Personnage</span><span class="token punctuation">&gt;</span></span> personnages <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Ajout de différents types de personnages à la liste</span>
+        personnages<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">Mercenaire</span><span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        personnages<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">SuperMutant</span><span class="token punctuation">(</span><span class="token string">"Gronk"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        personnages<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">Scientifique</span><span class="token punctuation">(</span><span class="token string">"Dr. Smith"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Boucle sur la liste des personnages pour les faire attaquer</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token class-name">Personnage</span> personnage <span class="token operator">:</span> personnages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Nom du personnage : "</span> <span class="token operator">+</span> personnage<span class="token punctuation">.</span><span class="token function">getNom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            personnage<span class="token punctuation">.</span><span class="token function">attaqueSpeciale</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            personnage<span class="token punctuation">.</span><span class="token function">afficherCompetences</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Saut de ligne pour la lisibilité</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>Dans ce code, nous utilisons une liste de type <code>Personnage</code> pour stocker différents types de personnages : <code>Mercenaire</code>, <code>SuperMutant</code>, et <code>Scientifique</code>. Lorsque nous parcourons la liste des personnages, nous appelons la méthode <code>attaqueSpeciale()</code>.</p>
+<p>Grâce au polymorphisme, l’appel à <code>attaqueSpeciale()</code> sur chaque objet de la liste déclenchera l’implémentation spécifique de cette méthode dans la classe concrète à laquelle l’objet appartient. Cela nous permet d’appeler la méthode appropriée pour chaque type de personnage sans avoir à connaître le type exact à l’avance, ce qui rend notre code plus flexible et extensible.</p>
+<h3 id="étape-7–ajout-darmes-et-darmures-au-personnage">Étape 7 : Ajout d’armes et d’armures au personnage </h3>
+<p>Dans cette étape, nous allons étendre la classe <code>Personnage</code> pour lui permettre de porter des armes et des armures. Nous allons également créer des classes pour les armes et les armures, qui hériteront d’une classe abstraite <code>Item</code>.</p>
+<h4 id="instructions–1">Instructions : </h4>
+<ol>
+<li>Créez une classe abstraite <code>Item</code> avec trois attributs : <code>description</code> de type String <code>poids</code> de type double et <code>prix</code> de type double.</li>
+<li>Ajoutez deux sous-classes <strong>abstraites</strong> de <code>Item</code> : <code>Arme</code> et <code>Armure</code>.</li>
+<li>La classe <code>Arme</code> doit avoir un attribut supplémentaire <code>degats</code> de type int, représentant les dégâts infligés par l’arme.</li>
+<li>La classe <code>Armure</code> doit avoir un attribut supplémentaire <code>protection</code> de type int, représentant le niveau de protection fourni par l’armure.</li>
+<li>Modifiez la classe <code>Personnage</code> pour lui permettre de porter une arme et/ou une armure. Ajoutez les méthodes <code>equiperArme()</code> et <code>equiperArmure()</code> pour cela.</li>
+<li>Testez vos classes en créant des classes dérivées de d’armes et d’armures et quelques instances, et en les équipant à un personnage, et en simulant des interactions de combat.</li>
+</ol>
+<p>À la fin de cette étape, votre classe <code>Personnage</code> devrait être capable de porter des armes et des armures, ce qui ajoutera une dimension tactique intéressante à votre RPG.</p>
+<h3 id="étape-8–gestion-de-linventaire">Étape 8 : Gestion de l’inventaire </h3>
+<p>Dans cette étape, nous allons nous concentrer sur la gestion de l’inventaire dans notre jeu RPG, en utilisant les classes Collection de Java pour stocker les objets et en introduisant les interfaces et les comparateurs pour enrichir cette fonctionnalité.</p>
+<h4 id="partie-théorique–interfaces-et-comparateurs-en-java">Partie théorique : Interfaces et comparateurs en Java </h4>
+<p>Avant de commencer à coder, examinons brièvement deux concepts clés que nous allons utiliser :</p>
+<ul>
+<li>
+<p><strong>Interfaces en Java :</strong> Une interface est un contrat que les classes peuvent choisir de remplir en implémentant ses méthodes. Cela permet de définir un ensemble de comportements sans spécifier comment ils doivent être implémentés. Dans notre cas, nous allons créer une interface <code>IValuable</code> avec une méthode <code>aPourValeur</code> pour représenter la valeur des objets.</p>
+</li>
+<li>
+<p><strong>Comparateurs en Java :</strong> Les comparateurs sont des objets qui définissent un ordre total sur des objets. Ils sont utilisés pour trier des collections d’objets selon certains critères. Nous allons créer des comparateurs pour trier les objets de l’inventaire en fonction de leur prix, leur poids et leur valeur.</p>
+</li>
+</ul>
+<p>Maintenant que nous avons une compréhension de base de ces concepts, passons à la mise en pratique.</p>
+<h4 id="ressources-supplémentaires-">Ressources supplémentaires : </h4>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">Interface en Java (Oracle Documentation)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparateurs en Java (Oracle Documentation)</a></li>
+</ul>
+<h4 id="instructions–2">Instructions : </h4>
+<ol>
+<li>
+<p><strong>Création de l’interface <code>IValuable</code> :</strong></p>
+<p>Implémentez une interface <code>IValuable</code> avec une méthode <code>aPourValeur</code> qui renvoie la valeur de l’objet. Cette interface sera utilisée pour définir le comportement des objets ayant une valeur dans notre jeu.</p>
+<blockquote>
+<p>🚫 <strong>Caution</strong><br>
+Je ne parle pas de la valeur “prix” mais pour une arme ce sera ses dégats et pour une protection son niveau de protection</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Utilisation de l’interface dans la classe <code>Item</code> :</strong></p>
+<p>Dans la méthode <code>toString</code> de la classe <code>Item</code>, utilisez l’opérateur <code>instanceof</code> pour vérifier si l’objet implémente l’interface <code>IValuable</code>. Si c’est le cas, affichez la valeur de l’objet.</p>
+</li>
+<li>
+<p><strong>Méthode <code>ajouterALInventaire</code> :</strong></p>
+<p>Implémentez une méthode <code>ajouterALInventaire</code> qui ajoute un objet à l’inventaire. Utilisez une collection de type <code>Set</code> pour stocker les objets uniques, en évitant les doublons.</p>
+</li>
+<li>
+<p><strong>Affichage de l’inventaire :</strong></p>
+<p>Implémentez une méthode <code>afficherInventaire</code> qui utilise les Streams pour grouper les objets de l’inventaire par le nom de leur classe. Présentez l’introspection en expliquant comment cela permet d’accéder aux métadonnées des classes à l’exécution.</p>
+</li>
+<li>
+<p><strong>Menu de sélection d’affichage :</strong></p>
+<p>Créez un menu interactif qui permet aux joueurs de choisir quelle page d’inventaire ils veulent voir. Utilisez les méthodes <code>System.out.println</code> pour afficher les options et la classe <code>Scanner</code> pour lire l’entrée de l’utilisateur.</p>
+</li>
+<li>
+<p><strong>Implémentation des comparateurs :</strong></p>
+<p>Créez des comparateurs pour trier les objets en fonction de leur prix, leur poids et leur valeur. Utilisez les interfaces <code>Comparator</code> pour définir ces comparateurs.</p>
+</li>
+<li>
+<p><strong>Tri de l’inventaire :</strong></p>
+<p>Dans le menu de sélection, permettez aux joueurs de choisir le type de tri qu’ils veulent appliquer à leur inventaire en tapant une lettre suivie d’un numéro correspondant au type de comparateur.</p>
+<blockquote>
+<p>Vous pouvez utiliser la méthode <code>Collections.sort</code> pour trier les objets en utilisant les comparateurs.<br>
+Vous pouvez également utiliser les Streams pour trier les objets en fonction de leur valeur (dégats ou protection), de leur poids ou de leur prix.<br>
+Pour cela stockez les comparateurs dans des variables et utilisez les ainsi</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>inventaire<span class="token punctuation">,</span> comparateur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ol>
+<p>En suivant ces étapes, vous allez enrichir votre jeu RPG en permettant aux joueurs de gérer efficacement leur inventaire et de personnaliser leur expérience de jeu en fonction de leurs besoins et préférences.</p>
+<h3 id="etape-9–niveau-dexpérience-et-points-de-vie">Etape 9 : Niveau d’expérience et Points de vie </h3>
+<p>Avant de passer à la création du système d’exploration, nous allons ajouter deux nouvelles fonctionnalités importantes à notre jeu : un niveau d’expérience pour le personnage et des points de vie.</p>
+<h4 id="instructions–3">Instructions : </h4>
+<ol>
+<li>
+<p><strong>Ajout du niveau d’expérience :</strong></p>
+<p>Ajoutez un attribut <code>niveauExperience</code> à la classe <code>Personnage</code> pour suivre le niveau d’expérience du personnage.</p>
+</li>
+<li>
+<p><strong>Ajout des points de vie :</strong></p>
+<p>Ajoutez une méthode <code>getPointsDeVie</code> à la classe <code>Personnage</code> pour représenter les points de vie du personnage.<br>
+Dans un premier temps, le personnage ne perds pas définitivement ses points de vie mais il les récupère à chaque fois qu’il est blessé à l’issue d’un combat.<br>
+En l’occurence, c’est plutôt “points de vie max” que vous allez implémenter.<br>
+Faites que la méthode renvoie <code>100 + Force * 10</code></p>
+</li>
+</ol>
+<h3 id="création-du-système-dexploration">Création du système d’exploration </h3>
+<p>Maintenant que nous avons enrichi notre personnage, nous allons créer un système d’exploration pour lui permettre de vivre des aventures excitantes et dangereuses !</p>
+<h4 id="classe-explorationgenerator">Classe ExplorationGenerator </h4>
+<ol>
+<li>
+<p><strong>Création de la classe ExplorationGenerator :</strong></p>
+<p>Créez une nouvelle classe <code>ExplorationGenerator</code> qui exposera une méthode <code>explorer(Personnage)</code>. Cette méthode permettra au personnage de découvrir de nouveaux endroits et d’interagir avec ce qu’il y trouve.</p>
+</li>
+<li>
+<p><strong>Méthode <code>explorer</code> :</strong></p>
+<p>Dans la méthode <code>explorer</code>, générez un nombre aléatoire. Sur une chance sur 4, appelez la méthode <code>looterUnObjet()</code>, sinon appelez la méthode <code>combat()</code>.</p>
+</li>
+<li>
+<p><strong>Méthode <code>combat</code> :</strong></p>
+<p>La méthode <code>combat</code> devra être définie dans l’interface <code>ICombatGenerator</code>. Elle prendra en paramètre le personnage et renverra un boolean indiquant le résultat du combat (victoire ou défaite).</p>
+</li>
+<li>
+<p><strong>Méthode <code>looterUnObjet</code> :</strong></p>
+<p>La méthode <code>looterUnObjet</code> devra être définie dans l’interface <code>ILootGenerator</code>. Elle prendra également en paramètre le personnage et renverra un objet <code>Item</code>.</p>
+</li>
+<li>
+<p><strong>Gestion de la victoire :</strong></p>
+<p>Si le résultat du combat est <code>true</code>, c’est-à-dire que le personnage a remporté le combat, il y a une chance sur 2 d’appeler la méthode <code>looterUnObjet</code>. Dans tous les cas, le personnage gagnera de l’expérience.</p>
+</li>
+<li>
+<p><strong>Interfaces pour la génération :</strong></p>
+<p>Stockez une référence vers une instance des interfaces <code>ILootGenerator</code>, <code>ICombatGenerator</code> et <code>IExperienceGenerator</code>. Ces interfaces prennent en paramètre un personnage et renvoient respectivement un objet <code>Item</code>, un boolean et un entier.</p>
+</li>
+</ol>
+<h3 id="interfaces-pour-la-génération-de-loot-de-combat-et-dexpérience">Interfaces pour la génération de loot, de combat et d’expérience </h3>
+<p>Voici les interfaces et les classes concrètes pour générer du loot, gérer les combats et calculer l’expérience gagnée par le personnage.</p>
+<h4 id="interface-ilootgenerator-">Interface ILootGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">ILootGenerator</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Item</span> <span class="token function">genererLoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="interface-icombatgenerator-">Interface ICombatGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">ICombatGenerator</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-boolean">boolean</span> <span class="token function">combat</span><span class="token punctuation">(</span><span class="token class-name">Personnage</span> personnage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="interface-iexperiencegenerator-">Interface IExperienceGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-interface">interface</span> <span class="token class-name">IExperienceGenerator</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> <span class="token function">calculerExperience</span><span class="token punctuation">(</span><span class="token class-name">Personnage</span> personnage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="implémentations-des-classes-">Implémentations des classes : </h3>
+<h4 id="lootgenerator-">LootGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">LootGenerator</span> <span class="token keyword keyword-implements">implements</span> <span class="token class-name">ILootGenerator</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">Random</span> random<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">LootGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span>random <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">Item</span> <span class="token function">genererLoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-int">int</span> choix <span class="token operator">=</span> random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Génère un nombre aléatoire entre 0 et 5</span>
+        <span class="token comment">// Vous pouvez vous amuser à rendres équipements plus dur à obtenir que d'autres, vous pouvez fonctionner des plages de valeurs exemple si &lt;50 loot pourris, si &lt;60 moyen , si &lt;70 bon loot etc... par contre il ne sera pas possible d'utiliser un switch case</span>
+
+        <span class="token keyword keyword-switch">switch</span> <span class="token punctuation">(</span>choix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">0</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureCuir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">1</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureTissu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">2</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureMetal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">3</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureCombat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">4</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureEnergetique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-case">case</span> <span class="token number">5</span><span class="token operator">:</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArmureAssault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-default">default</span><span class="token operator">:</span>
+                <span class="token comment">// En cas de choix invalide, retourne null</span>
+                <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-null">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="combatgenerator-">CombatGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">CombatGenerator</span> <span class="token keyword keyword-implements">implements</span> <span class="token class-name">ICombatGenerator</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">Random</span> random<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-public">public</span> <span class="token class-name">CombatGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span>random <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-boolean">boolean</span> <span class="token function">combat</span><span class="token punctuation">(</span><span class="token class-name">Personnage</span> personnage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Points</span> de vie du monstre entre <span class="token number">50</span> et <span class="token number">100</span>
+        <span class="token keyword keyword-int">int</span> pointsDeViePersonnage <span class="token operator">=</span> personnage<span class="token punctuation">.</span><span class="token function">getPointsDeVie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-int">int</span> pointsDeVieMonstre <span class="token operator">=</span> pointsDeViePersonnage <span class="token operator">*</span> random<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">1.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Points de vie du monstre entre 90 et 120% de ceux du personnage</span>
+    
+        <span class="token keyword keyword-do">do</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Calcul des dégâts infligés par le personnage et le monstre</span>
+            <span class="token keyword keyword-int">int</span> degatsPersonnage <span class="token operator">=</span> personnage<span class="token punctuation">.</span><span class="token function">getDegats</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Dégâts entre 0 et 10 supplémentaires</span>
+            <span class="token keyword keyword-int">int</span> degatsMonstre <span class="token operator">=</span> degatsPersonnage <span class="token operator">*</span> random<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">1.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Dégâts du monstre entre 90 et 120% de ceux du personnage</span>
+
+            <span class="token comment">// Appliquer les dégâts</span>
+            pointsDeVieMonstre <span class="token operator">-=</span> degatsPersonnage<span class="token punctuation">;</span>
+            pointsDeViePersonnage <span class="token operator">-=</span> degatsMonstre<span class="token punctuation">;</span>
+
+            <span class="token comment">// Vérifier si le combat est terminé</span>
+            <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>pointsDeVieMonstre <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Le personnage a gagné</span>
+            
+                <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>pointsDeViePersonnage <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Le monstre a gagné</span>
+               
+                <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>pointsDeVieMonstre <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> pointsDeViePersonnage <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Ce cas ne devrait normalement pas être atteint</span>
+        <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="experiencegenerator-">ExperienceGenerator : </h4>
+<pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">ExperienceGenerator</span> <span class="token keyword keyword-implements">implements</span> <span class="token class-name">IExperienceGenerator</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-int">int</span> <span class="token function">calculerExperience</span><span class="token punctuation">(</span><span class="token class-name">Personnage</span> personnage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-int">int</span> intelligence <span class="token operator">=</span> personnage<span class="token punctuation">.</span><span class="token function">getIntelligence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-int">int</span> chance <span class="token operator">=</span> personnage<span class="token punctuation">.</span><span class="token function">getChance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// Calcul de l'expérience en fonction de l'intelligence et de la chance du personnage</span>
+        <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>intelligence <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>chance <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ol start="7">
+<li>
+<p><strong>Amélioration du générateur de combat</strong></p>
+<ol>
+<li>Vous remarquerez que la protection du personnage et les degats de son arme ne rentrent pas en compte. C’est à vous d’améliorer cette méthode pour qu’elle prenne en compte ces paramètres.</li>
+<li>Rappelez vous que votre personnage à une compétence attaque spéciale, vous pouvez l’utiliser pour augmenter les dégats infligés par le personnage.</li>
+<li>Vous pouvez également jouer d’avantage avec la compétence Chance du personnage</li>
+<li>Ajouter des sorties consoles pour la méthode de combat pour que le joueur puisse suivre le combat.</li>
+<li>Implémentez une méthode gainExperience dans la classe Personnage pour ajouter de l’expérience au personnage.<br>
+Cette méthode prendra en paramètre un entier représentant le nombre de points d’expérience à ajouter au personnage.<br>
+Comparez l’ancienne valeur et la nouvelle, si le personnage a gagné un niveau, il pourra augmenter une compétence de son choix.</li>
+</ol>
+<blockquote>
+<p>✋ <strong>Note</strong><br>
+Pour detecter un changement de niveau, soit vous pouvez le faire de manière linéaire (tous les 100 points d’expérience par exemple) soit vous pouvez utiliser une formule mathématique pour calculer le niveau en fonction de l’expérience. Par exemple niveau = experience^0.3 qui donne les paliers suivants :</p>
+<ul>
+<li>Niveau 2 : 10</li>
+<li>Niveau 3 : 38</li>
+<li>Niveau 4 : 101</li>
+<li>Niveau 5 : 213</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#étape-5--implémentation-de-classes-de-personnages-spécialisées" class="md-toc-link"><p><strong>Étape 5 : Implémentation de classes de personnages spécialisées</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#instructions-" class="md-toc-link">
+            <p>Instructions :</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#conseils-" class="md-toc-link">
+            <p>Conseils :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#étape-6--utilisation-du-polymorphisme" class="md-toc-link">
+            <p><strong>Étape 6 : Utilisation du polymorphisme</strong></p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#étape-7--ajout-darmes-et-darmures-au-personnage" class="md-toc-link"><p>Étape 7 : Ajout d’armes et d’armures au personnage</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#instructions--1" class="md-toc-link">
+            <p>Instructions :</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#étape-8--gestion-de-linventaire" class="md-toc-link"><p>Étape 8 : Gestion de l’inventaire</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#partie-théorique--interfaces-et-comparateurs-en-java" class="md-toc-link">
+            <p>Partie théorique : Interfaces et comparateurs en Java</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ressources-supplémentaires-" class="md-toc-link">
+            <p>Ressources supplémentaires :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#instructions--2" class="md-toc-link">
+            <p>Instructions :</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#etape-9--niveau-dexpérience-et-points-de-vie" class="md-toc-link"><p>Etape 9 : Niveau d’expérience et Points de vie</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#instructions--3" class="md-toc-link">
+            <p>Instructions :</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#création-du-système-dexploration" class="md-toc-link"><p>Création du système d’exploration</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#classe-explorationgenerator" class="md-toc-link">
+            <p>Classe ExplorationGenerator</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#interfaces-pour-la-génération-de-loot-de-combat-et-dexpérience" class="md-toc-link"><p>Interfaces pour la génération de loot, de combat et d’expérience</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#interface-ilootgenerator-" class="md-toc-link">
+            <p>Interface ILootGenerator :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#interface-icombatgenerator-" class="md-toc-link">
+            <p>Interface ICombatGenerator :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#interface-iexperiencegenerator-" class="md-toc-link">
+            <p>Interface IExperienceGenerator :</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#implémentations-des-classes-" class="md-toc-link"><p>Implémentations des classes :</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#lootgenerator-" class="md-toc-link">
+            <p>LootGenerator :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#combatgenerator-" class="md-toc-link">
+            <p>CombatGenerator :</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#experiencegenerator-" class="md-toc-link">
+            <p>ExperienceGenerator :</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

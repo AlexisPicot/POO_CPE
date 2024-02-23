@@ -1,0 +1,9 @@
+theme: white
+highlightTheme: github
+export_on_save:
+  html: true
+output:
+  word_document:
+    highlight: "tango"
+    usefields: true
+    reference_doc: model.docx

@@ -1,11 +1,13 @@
 {
 	"name": "svelte-deck",
 	"version": "0.0.1",
+	"homepage": "https://alexispicot.github.io/POO_CPE/",
 	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"deploy":"vite build && gh-pages -d build  -t true",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

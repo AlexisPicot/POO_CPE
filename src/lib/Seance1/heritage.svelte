@@ -88,7 +88,7 @@ Carre ->Rectangle
 		Imaginons que nous voulions développer un simulateur de conduite. Nous pouvons concevoir une
 		classe Voiture qui sera la représentation d’une voiture dans notre application.
 	</p>
-	<p class="fragment" >
+	<p class="fragment">
 		Mais nous pouvons également rendre possible la simulation d’une moto. Dans ce cas, nous aurons
 		également besoin d’une classe Moto.
 	</p>
@@ -105,7 +105,7 @@ Carre ->Rectangle
 				}
 			}`}
 		</Code>
-		<Code className="fragment" >
+		<Code className="fragment">
 			{`
 			public class Moto {
 		
@@ -233,4 +233,20 @@ class Moto extends Vehicule {
 }
 `}</Code
 	>
+</Slide>
+<Slide>
+	<h3 id="héritage-de-classes-en-programmation-orientée-objet">Héritage de Classes</h3>
+	<h4>Les classes abstraites</h4>
+	<p>
+		Nous avons vu que l’héritage est un moyen de mutualiser du code dans une classe parente. Parfois
+		cette classe représente une abstraction pour laquelle il n’y a pas vraiment de sens de créer une
+		instance. Dans ce cas, on peut considérer que la généralisation est abstraite.
+
+		<br />
+		Par exemple, imaginez une classe <code>Forme</code> qui représente une forme géométrique et des classes <code>Rectangle</code>
+		et <code>Cercle</code>, il n'y a pas de sens de créer une forme géométrique sans préciser de quelle forme il s'agit.
+	</p>
+	<p class="border-l-4 border-blue-500 pl-4">
+		Par opposition, on appelle classe concrète une classe qui n’est pas abstraite.
+	</p>
 </Slide>
