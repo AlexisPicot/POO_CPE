@@ -1,11 +1,7 @@
 ---
 title: "TP 1"
-theme: white
-highlightTheme: github
-output:
-  word_document:
-    highlight: "tango"
-    reference_doc: model.docx
+export_on_save:
+  html: true
 ---
 
 # Travaux Pratiques : Introduction à la Programmation Orientée Objet en Java - Création d'un RPG

@@ -1,0 +1,110 @@
+Voici un exemple de mise en œuvre de la partie 8 du TP pour gérer l'inventaire en se concentrant sur la familiarisation avec les classes Collection de Java :
+
+```java
+import java.util.*;
+import java.util.stream.Collectors;
+
+// Interface pour les objets ayant une valeur
+interface IValuable {
+    int getValeur();
+}
+
+// Classe représentant un objet
+class Item {
+    private String nom;
+    
+    public Item(String nom) {
+        this.nom = nom;
+    }
+    
+    @Override
+    public String toString() {
+        if (this instanceof IValuable) {
+            return nom + " - valeur: " + ((IValuable) this).getValeur();
+        } else {
+            return nom;
+        }
+    }
+}
+
+// Classe principale du TP
+public class Inventaire {
+    private Set<Item> inventaire = new HashSet<>();
+    
+    // Méthode pour ajouter un objet à l'inventaire
+    public void ajouter(Item item) {
+        inventaire.add(item);
+    }
+    
+    // Méthode pour afficher l'inventaire
+    public void afficher() {
+        Map<String, List<Item>> itemsParClasse = inventaire.stream()
+            .collect(Collectors.groupingBy(item -> item.getClass().getSimpleName()));
+        
+        for (Map.Entry<String, List<Item>> entry : itemsParClasse.entrySet()) {
+            System.out.println(entry.getKey() + ":");
+            entry.getValue().forEach(item -> System.out.println("    " + item.toString()));
+        }
+    }
+    
+    // Méthode principale
+    public static void main(String[] args) {
+        Inventaire inventaire = new Inventaire();
+        
+        // Ajout d'objets à l'inventaire
+        inventaire.ajouter(new Arme("Epée", 50));
+        inventaire.ajouter(new Armure("Bouclier", 30));
+        inventaire.ajouter(new Potion("Potion de guérison", 20));
+        
+        // Affichage de l'inventaire
+        inventaire.afficher();
+    }
+}
+
+// Classe représentant une arme
+class Arme extends Item implements IValuable {
+    private int degats;
+    
+    public Arme(String nom, int degats) {
+        super(nom);
+        this.degats = degats;
+    }
+    
+    @Override
+    public int getValeur() {
+        return degats;
+    }
+}
+
+// Classe représentant une armure
+class Armure extends Item implements IValuable {
+    private int protection;
+    
+    public Armure(String nom, int protection) {
+        super(nom);
+        this.protection = protection;
+    }
+    
+    @Override
+    public int getValeur() {
+        return protection;
+    }
+}
+
+// Classe représentant une potion
+class Potion extends Item implements IValuable {
+    private int soins;
+    
+    public Potion(String nom, int soins) {
+        super(nom);
+        this.soins = soins;
+    }
+    
+    @Override
+    public int getValeur() {
+        return soins;
+    }
+}
+```
+
+Ce code permet d'ajouter des objets à un inventaire, de les afficher en les regroupant par classe, et d'afficher leur valeur pour ceux qui implémentent l'interface `IValuable`. Les comparateurs peuvent être ajoutés pour trier l'inventaire en fonction du prix, du poids ou de la valeur. Pour simplifier, je n'ai pas inclus la partie du menu pour choisir le type de tri, mais cela pourrait être ajouté facilement en utilisant la classe `Scanner`.
