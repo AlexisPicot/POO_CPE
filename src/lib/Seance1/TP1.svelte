@@ -35,21 +35,5 @@
 <Slide>
 	<Polymorphisme />
 </Slide>
-<Slide>
-	<h1>TD</h1>
-	<p>Question à compléter et à rendre sur <i>e-campus</i></p>
-	<a href="/TD1.docx">TD1 (Version Word)</a><br />
-	<a href="/TD1.html">TD1 (Version Web)</a>
-</Slide>
-<Slide>
-	<h1>TP</h1>
-	<p>Code source à déposer sur <i>e-campus</i></p>
-	<a href="/EnvSetup.docx">Configuration VSCode (Version Word) </a> <br />
-	
-	<a href="/EnvSetup.html">Configuration VSCode (Version Web) </a> <br /><br />
 
-	<a href="/TP1.docx">TP1 (Version Word) </a> <br />
-	<a href="/TP1.html">TP1 (Version Web)</a><br /><br />
-	<a href="/TP2.docx">TP2 (Version Word)</a><br />
-	<a href="/TP2.html">TP2 (Version Web)</a>
-</Slide>
+

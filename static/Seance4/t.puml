@@ -1,0 +1,65 @@
+@startuml
+
+class LibraryManager {
+    -instance: LibraryManager
+    -LibraryManager()
+    +getInstance(): LibraryManager
+}
+
+class BookFactory {
+    +createBook(type: String): Book
+}
+
+interface LoanStrategy {
+    +loanBook()
+}
+
+class StandardLoanStrategy {
+    +loanBook()
+}
+
+class LongTermLoanStrategy {
+    +loanBook()
+}
+
+class Library {
+    -subscribers: List<Subscriber>
+    +addBook(book: Book)
+    +notifySubscribers()
+}
+
+class Subscriber {
+    +update(book: Book)
+}
+
+abstract class Book {
+    -title: String
+    -author: String
+    +getTitle(): String
+    +getAuthor(): String
+}
+
+class StandardBook {
+}
+
+class DecoratorBook {
+    -book: Book
+    +DecoratorBook(book: Book)
+    +getTitle(): String
+    +getAuthor(): String
+}
+
+Library --> Subscriber: notifies
+Library <-- Subscriber: subscribed
+Book <|-- StandardBook
+Book <|-- DecoratorBook
+
+StandardBook --> BookFactory: creates
+DecoratorBook --> BookFactory: creates
+
+StandardBook ..> LoanStrategy: uses
+DecoratorBook ..> LoanStrategy: uses
+
+StandardLoanStrategy <|.. LongTermLoanStrategy
+
+@enduml

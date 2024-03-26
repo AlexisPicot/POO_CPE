@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 
+	import '$lib/plugin/reveal.js-fullscreen-code.css'
 	import plantumlEncoder from 'plantuml-encoder'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
@@ -31,6 +32,7 @@
 			maxScale: 1.0,
 			width: 1280,
 			height: 720,
+			pdfSeparateFragments: false ,
 			//view: 'scale',
 			//scrollProgress: true
 			// controls: false,
@@ -38,7 +40,13 @@
 		})
 
 		registerPlantUml(deck)
-		deck.initialize({})
+		deck.initialize({
+			dependencies: [
+            // ...
+            { src: 'src/lib/plugin/jquery-3.1.1.min.js' },
+            { src: 'src/lib/plugin/reveal.js-fullscreen-code.js' }
+        ]
+		})
 	})
 	function registerPlantUml(deck: Reveal.Api) {
 		deck.registerPlugin({

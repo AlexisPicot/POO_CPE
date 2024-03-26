@@ -55,6 +55,18 @@ section.stack.present {
 	@apply relative;
 	top: -4.5rem!important;
 }
+#fullscreen-box{
+	background-color: black;
+    color: white;
+}
+
+code:has(>.hljs-ln){
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
 @media print {
 	body,
 	.reveal * {
@@ -64,7 +76,7 @@ section.stack.present {
 	.reveal code {
 		overflow: visible !important;
 	}
-
+	fullscreen-box,
 	.no-print {
 		display: none !important;
 	}

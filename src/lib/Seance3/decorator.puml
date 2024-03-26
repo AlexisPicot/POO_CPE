@@ -1,0 +1,43 @@
+@startuml Decorator
+class Jeu{
+- personnage : Personnage
+- experienceGenerator : IExperienceGenerator
+- equiper(Item item)
+}
+abstract class Item {
+}
+interface IExperienceDecoratorFactory {
++ createDecorator(IExperienceGenerator) : <b>IExperienceGenerator
+}
+class AnneauExp extends Item implements IExperienceDecoratorFactory {
++ createDecorator(IExperienceGenerator) : IExperienceGenerator
+
+}
+interface IExperienceGenerator {
+    + calculerExperience(Personnage personnage)
+}
+
+class ExperienceGenerator implements IExperienceGenerator {
+    + calculerExperience(Personnage personnage)
+}
+
+abstract class ExperienceDecorator {
+    - decoratedGenerator: IExperienceGenerator
+    + {abstract} calculerExperience(Personnage personnage)
+}
+
+class ExperienceBoostDecorator extends ExperienceDecorator implements IExperienceGenerator  {
+    - decoratedGenerator : IExperienceGenerator
+    + calculerExperience(Personnage personnage)
+}
+Jeu::equiper o-- Item
+Jeu::ExperienceGenerator  o-- IExperienceGenerator 
+AnneauExp::createDecorator  o.. ExperienceBoostDecorator 
+'ExperienceBoostDecorator::decoratedGenerator  o- IExperienceGenerator
+ExperienceDecorator o-up- IExperienceGenerator
+
+
+hide AnneauExp
+hide IExperienceDecoratorFactory
+hide ExperienceBoostDecorator
+hide ExperienceDecorator

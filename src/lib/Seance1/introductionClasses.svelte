@@ -381,7 +381,7 @@ public class Main {
 	<p>Toute classe déclarée hérite implicitement de la classe <code>Object</code></p>
 	<p>Tout objet peut redéfinir une méthode <code>equals()</code></p>
 	
-	<Code lines="12-32"
+	<Code lines="12-32" 
 		>{`
 		class Complex {
 		 

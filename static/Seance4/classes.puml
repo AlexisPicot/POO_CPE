@@ -1,0 +1,24 @@
+class Etudiant {
+  + sInscrire()
+  + consulterEvenements()
+  + consulterClubs()
+  + consulterActualites()
+  + consulterBillets()
+  + acheterBillets()
+  + acheterNourriture()
+  + definirMoyenPaiement()
+}
+
+class Membre extends Etudiant {
+  + gererEvenements()
+  + gererMembres()
+  + gererActualites()
+}
+
+class ResponsableFoyer extends Membre {
+  + commanderNourriture()
+}
+
+class ResponsableBilleterie extends Membre{
+  + editerBillets()
+}
