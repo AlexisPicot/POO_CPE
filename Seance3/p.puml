@@ -1,0 +1,101 @@
+@startuml
+skinparam groupInheritance 4
+top to bottom direction
+
+    interface IPayant{}
+    interface IHoraires {
+        + estOuverte(): boolean
+    }
+
+    interface IDuree {
+        + durée(): int
+    }
+
+    interface ILimiteCapacite {
+        + capaciteLimite(): double
+    }
+
+    interface IVeganFriendly {
+        + estVeganFriendly(): boolean
+    }
+    interface ILimiteTaille {
+        + tailleMinimale(): double
+    }
+    interface IPhotoSouvenir implements IPayant{
+        + emplacementPhoto(): string[]
+    }
+
+    interface ITourDeSpectacle {
+        + tourDeSpectacle(): string
+    }
+interface INourritureAEmporter {
+    
+}
+
+class MontagneRusse extends Manège implements IPhotoSouvenir {
+    + durée(): int
+    + capaciteLimite(): double
+    + estOuverte(): boolean
+    + tailleMinimale(): double
+    + emplacementPhoto(): string[]
+}
+abstract class Attraction implements IDuree, IHoraires {
+
+}
+
+abstract class Spectacle extends Attraction implements ITourDeSpectacle, ILimiteCapacite{
+
+}
+class MagasinSouvenir extends Commerce implements IPhotoSouvenir, INourritureAEmporter {
+    + emplacementPhoto(): string[]
+    + aEmporter(): boolean
+
+}
+class ExpositionDinosaures extends Exposition implements ILimiteCapacite, IPayant {
+    + durée(): int
+    + capaciteLimite(): double
+    + estOuverte(): boolean
+}
+class ExpositionReptiles extends Exposition implements IPhotoSouvenir{
+    + durée(): int
+    + capaciteLimite(): double
+    + estOuverte(): boolean
+}
+class SpectacleSonLumiere extends Spectacle implements IVeganFriendly {
+    + tourDeSpectacle(): string
+}
+class SpectacleOrques extends Spectacle implements IPhotoSouvenir {
+    + tourDeSpectacle(): string
+    + emplacementPhoto(): string[]
+}
+abstract class Exposition extends Attraction {
+
+}
+
+abstract class Commerce implements IHoraires, IPayant {
+
+}
+abstract class Restaurant extends Commerce  {
+    + aEmporter(): boolean
+}
+
+class Manège extends Attraction implements ILimiteTaille, ILimiteCapacite {
+    + durée(): int
+    + capaciteLimite(): double
+    + estOuverte(): boolean
+    + tailleMinimale(): double
+
+}
+
+class SpectacleDauphins extends Spectacle, ILimiteTaille {
+    + tourDeSpectacle(): string
+}
+
+
+class RestaurantGastronomique extends Restaurant implements ITourDeSpectacle, IVeganFriendly {
+    + tourDeSpectacle(): string
+}
+class RestaurantFastFood extends Restaurant  implements INourritureAEmporter {
+
+}
+@enduml
